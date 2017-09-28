@@ -1,0 +1,35 @@
+extends  ../_skeleton
+
+block variables
+  - var pageName = '503 Page'
+  - var bodyClass = ['one-screen-page', 'bg-gray-darker', 'bg-image'];
+  - var bodyImage = 'bg-503'
+
+block title
+  title Page 503
+
+block page
+  .page-inner
+    //- Page Header
+    include ../sections/_section-header-base-transparent
+
+    section.text-center
+      .shell
+        .range.range-sm-center
+          .cell-sm-9.cell-md-8
+            h5 Service is temporary unavailable
+            .text-extra-large-bordered.offset-top-15
+              p 503
+
+            p.text-white
+              | Sorry, we're offline right now to make our site even better.
+              br.veil.reveal-xs-block
+              |  Please, come back later and check what we've been up to.
+
+            .group-xl.offset-top-40.offset-sm-top-60.offset-xl-top-120
+              a.btn.btn-primary(href='index.html') Back to home
+              a.btn.btn-white-outline(href='contacts-us.html') contact us
+    ='\n'
+
+    //- Page Footer
+    include ../sections/_section-footer-base-transparent

@@ -1,0 +1,85 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Progress Bars'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+  +page-title(pageName, 'bg-image-5')
+
+  //- Skills Bars
+  section.section-60.section-sm-75.section-lg-bottom-120
+    .shell
+      .range
+        .cell-xs-12.text-center
+          h3.text-spacing--25 Skills Bars
+      .range.range-md-justify.offset-top-30.offset-sm-top-60
+        .cell-sm-6.cell-lg-5
+          p.
+            Our agency can provide you and your family with quality insurance for your personal, business and financial needs. Our knowledgeable agents can help your find affordable and reliable car insurance, home insurance, commercial insurance or life insurance.
+
+          p.
+            Our focus is to help our clients grow their assets. We believe in being local and we strive to improve the communities where we live and work.
+        .cell-sm-6.offset-top-40.offset-sm-top-0
+          .shift-sm-top-1
+            include ../_includes/_progress-list
+  ='\n'
+
+  //- Counters
+  section.section-60.section-sm-100.bg-gray-dark.bg-image(style='background-image: url(images/bg-image-6.jpg);')
+    .shell
+      .range
+        .cell-xs-12.text-center
+          h3 Counters
+
+      .range.offset-top-45
+        .cell-xs-6.cell-sm-3
+          .box-counter.box-counter-inverse.box-counter-white
+            img(src="images/icon-01.png", width="53", height="50", alt="")
+            //- CountTo
+            .text-large.counter.offset-top-15 1450
+            h5.box-header.text-white Happy Clients
+
+        .cell-xs-6.cell-sm-3.offset-top-40.offset-xs-top-0
+          .box-counter.box-counter-inverse.box-counter-white
+            img(src="images/icon-02.png", width="41", height="43", alt="")
+            //- CountTo
+            .text-large.counter.offset-top-15 23
+            h5.box-header Insurance Products
+
+        .cell-xs-6.cell-sm-3.offset-top-40.offset-sm-top-0
+          .box-counter.box-counter-inverse.box-counter-white
+            img(src="images/icon-03.png", width="52", height="53", alt="")
+            //- CountTo
+            .text-large.counter 10
+            h5.box-header Years of Experience
+
+        .cell-xs-6.cell-sm-3.offset-top-40.offset-sm-top-0
+          .box-counter.box-counter-inverse.box-counter-white
+            img(src="images/icon-04.png", width="55", height="46", alt="")
+            //- CountTo
+            .text-large.counter.offset-top-20 196
+            h5.box-header Professional Agents
+  ='\n'
+
+  //- Progress Bars
+  section.section-60.section-sm-75.section-md-top-100.section-md-bottom-120
+    .shell
+      .range
+        .cell-xs-12.text-center
+          h3 Progress Bars
+      .range.offset-top-30
+        .cell-xs-12
+          .countdown-wrap.block-centered
+            //- Countdown
+            .DateCountdown.DateCountdown-1(data-type='until', data-date='2017-12-31 00:00:00', data-format='wdhms', data-color='#ffffff', data-bg='rgba(255, 255, 255, 1)', data-width='0.02')
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_section-footer-default

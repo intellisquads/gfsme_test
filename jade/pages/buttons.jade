@@ -1,0 +1,68 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Buttons'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+
+  +page-title(pageName, 'bg-image-2')
+
+  //- Buttons
+  section.section-60.section-sm-top-90.section-sm-bottom-100.section-buttons
+    .shell
+      .range
+        .cell-xs-12
+          h3 Button Sizes
+          p.text-gray-base 4 different sizes: super, large, default and small.
+          .group-lg.group-middle.offset-top-30
+            .btn.btn-xl.btn-primary super size
+            .btn.btn-lg.btn-primary Large size
+            .btn.btn-primary Base size
+            .btn.btn-sm.btn-primary small size
+
+        .cell-xs-12.offset-top-60.offset-md-top-90
+          h3 Button Shapes
+          p.text-gray-base 4 different shapes: default, round, square and circle.
+          .group-lg.group-middle.offset-top-30
+            .btn.btn-primary Default
+            .btn.btn-primary.btn-round round
+            .btn.btn-primary.btn-rect square
+            .btn.btn-primary.btn-circle Circle
+
+        .cell-xs-12.offset-top-60.offset-md-top-90
+          h3 Buttons with Icons
+          p.text-gray-base Buttons are fully integrated with 900+ icons.
+          .group-lg.group-middle.offset-top-30
+            .btn.btn-icon.btn-icon-left.btn-primary
+              span.icon.icon-xs-smaller.material-icons-shopping_cart
+              | icon left
+            .btn.btn-icon.btn-icon-right.btn-primary
+              span.icon.icon-xs-smaller.material-icons-shopping_cart
+              | icon right
+            .btn.btn-icon.btn-icon-left.btn-primary-outline
+              span.icon.icon-xs-smaller.material-icons-shopping_cart
+              | icon left
+            .btn.btn-icon.btn-icon-right.btn-primary-outline
+              span.icon.icon-xs-smaller.material-icons-shopping_cart
+              | icon right
+
+        .cell-xs-12.offset-top-60.offset-md-top-90
+          h3 Buttons with Shadow
+          p.text-gray-base Enhance your button with a shadow effect.
+          .group-lg.group-middle.offset-top-30
+            .btn.btn-primary.btn-shadow shadow
+            .btn.btn-primary-outline.btn-shadow shadow
+  ='\n'
+
+
+  //- Page Footer
+  include ../sections/_section-footer-default

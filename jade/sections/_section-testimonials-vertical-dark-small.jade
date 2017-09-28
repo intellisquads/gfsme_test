@@ -1,0 +1,37 @@
+//- Includes
+include ../elements/_ui-quote-vertical
+
+//- What Clients Say?
+section.section-60.section-sm-90.section-md-bottom-120.bg-image.bg-gray-dark(style='background-image: url(images/bg-image-9.jpg);')
+  .shell.text-center
+    .range
+      .cell-xs-12
+        h3.text-spacing--25 What Clients Say?
+    .range.range-xs-center.range-sm-left.offset-top-40
+      .cell-sm-4
+        +quote-vertical({
+          mod: 'quote-vertical-inverse',
+          img: 'clients-testimonials-7-113x113.png',
+          text: "Tom Brown was able to save us a substantial amount of premium dollars and improve our insurance coverage..",
+          cite: "Axel Merphy",
+          caption: 'Client'
+        })
+
+      .cell-sm-4.offset-top-60.offset-sm-top-0
+        +quote-vertical({
+          mod: 'quote-vertical-inverse',
+          img: 'clients-testimonials-8-113x113.png',
+          text: "I have found working with the associates a genuine pleasure. The evaluation of our needs is well-researched..",
+          cite: "Amelia Condon",
+          caption: 'Client'
+        })
+
+      .cell-sm-4.offset-top-60.offset-sm-top-0
+        +quote-vertical({
+          mod: 'quote-vertical-inverse',
+          img: 'clients-testimonials-9-113x113.png',
+          text: "I have used many different insurance agencies and this agency is by far the best. Thank you a lot, keep up going this way.",
+          cite: "Jack Therapy",
+          caption: 'Client'
+        })
+='\n'

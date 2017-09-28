@@ -1,0 +1,91 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 6
+  - var pageName = 'Contact Us'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+
+  +page-title(pageName, 'bg-image-8')
+  .rd-google-map(class="rd-google-map__model", data-zoom='15', data-x='-73.9874068', data-y='40.643180' data-styles='[{"featureType":"all","stylers":[{"saturation":0},{"hue":"#e7ecf0"}]},{"featureType":"road","stylers":[{"saturation":-70}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"simplified"},{"saturation":-60}]}]')
+    ul.map_locations
+      li(data-y='40.643180', data-x='-73.9874068')
+        p
+          | 9870 ST VINCENT PLACE,
+          | GLASGOW, DC 45 FR 45
+  ='\n'
+
+  //- Get in Touch
+  section.section-60.section-sm-top-90.section-sm-bottom-100
+    .shell
+      .range.range-md-justify
+        .cell-md-7.cell-lg-6.offset-top-50.offset-md-top-0
+          h3.text-spacing--25 Get in Touch
+          //- RD Mailform
+          form.rd-mailform.form-modern.offset-top-30(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+            .range
+              .cell-sm-6
+                .form-group
+                  input#contact-name.form-control(type="text" name="name" data-constraints="@Required")
+                  label.form-label(for="contact-name") Name
+              .cell-sm-6.offset-top-30.offset-sm-top-0
+                .form-group
+                  input#contact-email.form-control(type="email" name="email" data-constraints="@Email @Required")
+                  label.form-label(for="contact-email") Email
+
+              .cell-xs-12.offset-top-30
+                .form-group
+                  .textarea-lined-wrap
+                    textarea#contact-message.form-control(name="message" data-constraints="@Required")
+                    label.form-label(for="contact-message") Message
+
+              .cell-xs-8.offset-top-30.offset-xs-top-30.offset-sm-top-50
+                button(type="submit").btn.btn-primary.btn-block Send
+
+              .cell-xs-4.offset-top-22.offset-xs-top-30.offset-sm-top-50
+                button(type="reset").btn.btn-silver-outline.btn-block Reset
+        .cell-md-5.cell-lg-4.offset-top-60.offset-md-top-0
+          .inset-md-right-15.inset-lg-right-0
+            .range
+              .cell-sm-10.cell-md-12
+                h3.text-spacing--25 How to Find Us
+                p.offset-md-top-40.text-gray-base.
+                  If you have any questions, just fill in the contact form, and we will answer you shortly. If you are living nearby, come visit AllRisk at one of our comfortable offices.
+
+              .cell-sm-6.cell-md-12.offset-top-30.offset-sm-top-45
+                h5.text-spacing--25 Headquarters
+                address.contact-info
+                  p.text-uppercase.text-gray-base 9863 - 9867 MILL ROAD, CAMBRIDGE, MG09 99HT.
+                  dl.list-terms-inline
+                    dt Telephone
+                    dd: a.link-gray-base(href='callto:#') +1 800 603 6035
+
+                  dl.list-terms-inline
+                    dt E-mail
+                    dd: a.link-primary(href='mailto:#') mail@demolink.org
+
+              .cell-sm-6.cell-md-12.offset-top-30.offset-sm-top-45.offset-md-top-30
+                h5.text-spacing--25 Support Centre
+                address.contact-info
+                  p.text-uppercase.text-gray-base 9870 ST VINCENT PLACE, GLASGOW, DC 45 FR 45
+                  dl.list-terms-inline
+                    dt Telephone
+                    dd: a.link-gray-base(href='callto:#') +1 800 603 6035
+
+                  dl.list-terms-inline
+                    dt E-mail
+                    dd: a.link-primary(href='mailto:#') mail@demolink.org
+
+
+  ='\n'
+
+
+
+  //- Page Footer
+  include ../sections/_section-footer-default

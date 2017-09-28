@@ -1,0 +1,101 @@
+//- Includes
+include ../elements/_ui-post-preview
+
+//- Footer Widget
+footer.page-foot.bg-cod-gray
+  section.section-40.section-sm-75
+    .shell
+      .range.range-xs-center
+        .cell-xs-9.cell-sm-11.cell-lg-12
+          .range
+            .cell-sm-6.cell-md-10.cell-lg-3
+              .inset-lg-right-20(style='max-width: 510px;')
+                //- Brand
+                a.brand.brand-inverse(href='index.html')
+                  include ../_includes/_logo
+                p.offset-top-22.
+                  TemplateMonster is an A-size depot of website templates - more than 46,000 designs to choose from. Since coming
+                  up in May 2002, we've gone 25 partners.
+                a.link.link-group.link-group-animated.link-bold.link-white(href=globals.getTemplateLink)
+                  span Get AllRisk Now
+                  span.icon.icon-xxs.icon-primary.fa.fa-angle-right
+
+            .cell-sm-6.cell-md-4.cell-lg-3.offset-top-50.offset-sm-top-0.offset-md-top-50.offset-lg-top-0
+              h6.text-uppercase Recent Posts
+              .offset-top-22.offset-md-top-30
+                +post-preview({
+                  classes: ['post-preview-inverse', 'offset-top-22'],
+                  img: 'post-preview-1-70x70',
+                  header: 'The Ultimate Technique to Pitch Anything',
+                  time: ['2016-02-04', 'Feb 4, 2016']
+                })
+
+                +post-preview({
+                  classes: ['post-preview-inverse', 'offset-top-22'],
+                  img: 'post-preview-2-70x70',
+                  header: 'Four Types of Verbal Communication',
+                  time: ['2016-02-04', 'Feb 4, 2016']
+                })
+
+            .cell-sm-6.cell-md-4.cell-lg-3.offset-top-50.offset-lg-top-0
+              h6.text-uppercase Quick links
+              .row.offset-top-22.offset-md-top-30(style='max-width: 270px;')
+                .col-xs-6
+                  ul.list-marked-variant-2
+                    li: a(href='index.html') Home
+                    li: a(href='services.html') Services
+                    li: a(href='careers.html') Careers
+                    li: a(href='blog-classic.html') Blog
+
+                .col-xs-6
+                  ul.list-marked-variant-2
+                    li: a(href='about-us.html') About us
+                    li: a(href='contacts-us.html') Contacts
+                    li: a(href='appointment.html') Appointment
+
+            .cell-sm-6.cell-md-4.cell-lg-3.offset-top-50.offset-lg-top-0
+              h6.text-uppercase Contact us
+              address.contact-info.offset-top-22.offset-md-top-30.offset-lg-top-35.text-left
+                .unit.unit-horizontal.unit-spacing-md.unit-middle
+                  .unit-left
+                    span.icon.icon-xs.icon-primary.material-icons-phone
+                  .unit-body
+                    a.link-white(href='callto:#') +123 234 984 47 45
+
+                .unit.unit-horizontal.unit-spacing-md.unit-middle.offset-top-15
+                  .unit-left
+                    span.icon.icon-xs.icon-primary.fa.fa-envelope-o
+                  .unit-body
+                    a.link-white(href='mailto:#') info@demolink.org
+
+                .unit.unit-horizontal.unit-spacing-md.offset-top-15
+                  .unit-left
+                    span.icon.icon-xs.icon-primary.material-icons-place
+                  .unit-body
+                    a.link-white.reveal-inline(href='#')
+                      | 17/11 MassiveAttack Street
+                      br
+                      | Bristol, United Kingdom
+  .shell
+    hr
+
+  section.section-35
+    .shell.text-center
+      .range.range-sm-reverse.range-sm-justify.range-sm-middle
+        .cell-sm-6.text-sm-right
+          .group-sm.group-middle
+            p.text-italic.text-white Follow Us:
+            ul.list-inline.list-inline-reset
+              li: a.icon.icon-circle.icon-gray-dark-filled.icon-xxs-smallest.fa.fa-facebook(href='#')
+              li: a.icon.icon-circle.icon-gray-dark-filled.icon-xxs-smallest.fa.fa-twitter(href='#')
+              li: a.icon.icon-circle.icon-gray-dark-filled.icon-xxs-smallest.fa.fa-google-plus(href='#')
+
+        .cell-sm-6.offset-top-15.offset-sm-top-0.text-sm-left
+          p.rights.text-white
+            span(id='copyright-year')
+            span &nbsp;&#169;&nbsp;
+            span AllRisk.&nbsp;
+            a.link-white-v2(href='privacy.html') Privacy Policy
+            if footerlink === 0
+              //- {%FOOTER_LINK}
+='\n'

@@ -1,0 +1,86 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-post-minimal
+
+block variables
+  - var activeIndex = 3
+  - var pageName = 'Gallery item'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+  +page-title('Gallery', 'bg-image-1')
+
+  //- Starting a Web Design Project
+  section.section-60.section-sm-75.section-lg-90
+    .shell
+      h3.text-spacing--25 Insurance and Financial Stability
+      article.post-info.offset-top-40
+        .post-image
+          +jpg('gallery-item-1-1170x883')
+        .post-main
+          .post-left
+            ul.post-meta
+              li: time(datetime='2016-05-01') May 2016
+              li by luis-e
+              li
+                ul.list-hashtags
+                  li: a(href='#') insurance,
+                  li: a(href='#') financial,
+                  li: a(href='#') stability,
+                  li: a(href='#') money
+
+          .post-body
+            p All month we have been talking about resolutions, but I’m not sure we have really touched on just how hard they are to keep. As we get to the end of January, many of us have already broken ours. I told myself I would eat better; go to the gym more, and save money. Truthfully, I figured if I gave myself three, I’d at least have to keep one, right? While my health is important, I already am pretty good about what I eat and my exercising so if I’m being honest, the most important resolution I can keep this year is to...
+
+  ='\n'
+
+  //- Related posts
+  section.section-35.section-sm-75.section-lg-90.bg-gray-light(style="background: #e5e6ed")
+    .shell.text-center.text-xs-left
+      .range
+        .cell-xs-12
+          h4 Related posts
+
+      .range.offset-top-40
+        .cell-sm-10.cell-md-6
+          +post-minimal({
+            img: 'gallery-item-2-220x224',
+            header: 'Just Married! Now What?',
+            time: ['2016-03-14', 'March 14'],
+            text: 'People grow up, age, get married.  Weddings are a monumental life event.  But before a couple can spend their life...'
+          })
+
+        .cell-sm-10.cell-md-6.offset-top-30.offset-md-top-0
+          +post-minimal({
+            img: 'gallery-item-3-220x224',
+            header: 'Wet Weather Driving Tips',
+            time: ['2016-03-13', 'March 14'],
+            text: 'In this transition period from the end of winter to the start of spring, the weather is wet.  From snow to ice to rain, to melting...'
+          })
+
+        .cell-sm-10.cell-md-6.offset-top-30
+          +post-minimal({
+            img: 'gallery-item-4-220x224',
+            header: 'Flood Insurance Basics',
+            time: ['2016-03-12', 'March 14'],
+            text: 'Each year flooding causes an average of $43,000 per claim and over $3.5 Billion total in claims.  Homeowners insurance...'
+          })
+
+        .cell-sm-10.cell-md-6.offset-top-30
+          +post-minimal({
+            img: 'gallery-item-5-220x224',
+            header: 'Auto Insurance Basics',
+            time: ['2016-03-11', 'March 14'],
+            text: 'Auto insurance can be confusing and overwhelming.  To help you understand it and make it a bit simpler, we have made a...'
+          })
+  ='\n'
+
+
+  //- Page Footer
+  include ../sections/_section-footer-default

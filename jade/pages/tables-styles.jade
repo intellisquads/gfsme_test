@@ -1,0 +1,37 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-quote-default
+include ../elements/_ui-placeholders
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Tables styles'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+
+  +page-title('Table styles', 'bg-image-7')
+
+  //- Tables
+  section.section-60.section-sm-100
+    .shell
+      .range
+        .cell-xs-12
+         +table('table-primary')
+
+        .cell-xs-12.offset-top-60.offset-md-top-100
+          +table
+
+        .cell-xs-12.offset-top-60.offset-md-top-100
+          +table(['table-primary', 'table-striped'])
+  ='\n'
+
+
+  //- Page Footer
+  include ../sections/_section-footer-default

@@ -1,0 +1,155 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-thumbnail-1
+include ../elements/_ui-quote-vertical
+include ../elements/_ui-icon-box-horizontal
+include ../elements/_ui-thumbnail-1
+include ../elements/_ui-thumbnail-2
+
+block variables
+  - var activeIndex = 1
+  - var pageName = 'About Us'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+
+  +page-title(pageName, 'bg-image-5')
+
+  //- Why Choose Us
+  section.section-60.section-sm-90.bg-athens-gray.bg-image.bg-image-sm-hide(style='background-image: url(images/about-1.jpg);')
+    .shell
+      .range.range-sm-right
+        .cell-sm-8.cell-md-7.cell-lg-5
+          .inset-sm-left-100
+            h3.text-spacing--25 Why Choose Us
+          .inset-sm-left-30.inset-sm-right-30.offset-top-40
+            ul.list-xl
+              li
+                +icon-box-left({
+                  icon: ['icon-md', 'material-design-check51'],
+                  header: 'Our Mission',
+                  text: 'Our mission is to provide outstanding service and superior coverage to every one of our clients.'
+                })
+              li
+                +icon-box-left({
+                  icon: ['icon-md', 'material-design-chat75'],
+                  header: '24/7 Support',
+                  text: 'Our dedicated support professionals are always here to help no matter your issue.'
+                })
+
+              li
+                +icon-box-left({
+                  icon: ['icon-md', 'material-design-briefcase50'],
+                  header: 'Our Commitment',
+                  text: 'We are proud to offer our clients competitive pricing, a broad choice of products and unparalleled advocacy.'
+                })
+
+  ='\n'
+
+  //- Counters
+  section.section-60.section-sm-100.bg-gray-dark.bg-image(style='background-image: url(images/bg-image-6.jpg);')
+    .shell
+      .range.offset-top-45
+        .cell-xs-6.cell-sm-3
+          .box-counter.box-counter-inverse.box-counter-white
+            img(src="images/icon-01.png", width="53", height="50", alt="")
+            //- CountTo
+            .text-large.counter.offset-top-15 1450
+            h5.box-header.text-white Happy Clients
+
+        .cell-xs-6.cell-sm-3.offset-top-40.offset-xs-top-0
+          .box-counter.box-counter-inverse.box-counter-white
+            img(src="images/icon-02.png", width="41", height="43", alt="")
+            //- CountTo
+            .text-large.counter.offset-top-15 23
+            h5.box-header Insurance Products
+
+        .cell-xs-6.cell-sm-3.offset-top-40.offset-sm-top-0
+          .box-counter.box-counter-inverse.box-counter-white
+            img(src="images/icon-03.png", width="52", height="53", alt="")
+            //- CountTo
+            .text-large.counter 10
+            h5.box-header Years of Experience
+
+        .cell-xs-6.cell-sm-3.offset-top-40.offset-sm-top-0
+          .box-counter.box-counter-inverse.box-counter-white
+            img(src="images/icon-04.png", width="55", height="46", alt="")
+            //- CountTo
+            .text-large.counter.offset-top-20 196
+            h5.box-header Professional Agents
+  ='\n'
+
+  //- Who we are?
+  section.section-66.section-sm-90.section-lg-bottom-120
+    .shell
+      .range
+        .cell-xs-12
+          h3 You Can Trust Us
+
+      .range.range-lg-justify.offset-top-30
+        .cell-sm-6.cell-lg-5.text-secondary
+          .inset-sm-right-15.inset-lg-right-0
+            p.
+              Our agency can provide you and your family with quality insurance for your personal, business and financial needs. Our knowledgeable agents can help your find affordable and reliable car insurance, home insurance, commercial insurance or life insurance.
+            p.
+              Our focus is to help our clients grow their assets. We believe in being local and we strive to improve the communities where we live and work.
+
+        .cell-sm-6.offset-top-40.offset-sm-top-0
+          .shift-sm-top-1
+            include ../_includes/_progress-list
+  ='\n'
+
+  section.section-66.section-sm-bottom-90.bg-whisper
+    .shell
+      .range.offset-top-40
+        .cell-xs-6.cell-sm-4.cell-md-3
+          +thumbnail-2({
+            img: 'team-9-246x300',
+            header: "Amanda Smith",
+            caption: "Chief Executive Officer",
+            phone: "+1 (409) 987–5874",
+            email: "info@demolink.org"
+          })
+
+        .cell-xs-6.cell-sm-4.cell-md-3.offset-top-40.offset-xs-top-0
+          +thumbnail-2({
+            img: 'team-10-246x300',
+            header: "John Doe",
+            caption: "Executive Vice President",
+            phone: "+1 (409) 987–5874",
+            email: "info@demolink.org"
+          })
+
+        .cell-xs-6.cell-sm-4.cell-md-3.offset-top-40.offset-sm-top-0
+          +thumbnail-2({
+            img: 'team-11-246x300',
+            header: "Vanessa Ives",
+            caption: "Chief Financial Officer",
+            phone: "+1 (409) 987–5874",
+            email: "info@demolink.org"
+          })
+
+        .cell-xs-6.cell-sm-4.cell-md-3.offset-top-40.offset-md-top-0
+          +thumbnail-2({
+            img: 'team-12-246x300',
+            header: "David Nicholson",
+            caption: "Vice President of Claims",
+            phone: "+1 (409) 987–5874",
+            email: "info@demolink.org"
+          })
+
+    ='\n'
+
+
+
+  include ../sections/_section-testimonials-vertical-dark-small
+
+
+  //- Page Footer
+  include ../sections/_section-footer-default

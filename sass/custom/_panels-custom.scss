@@ -1,0 +1,263 @@
+//
+// Panels custom styles
+// --------------------------------------------------
+
+// Light (line & minimal style)
+$accordion-light-color: $cello;
+$accordion-light-border: $gray-light;
+$accordion-light-content-color: $text-color;
+$accordion-light-arrow-color: $brand-primary;
+$accordion-light-header-padding: 24px 55px 22px 32px;
+$accordion-light-content-padding: 25px 44px 25px nth($accordion-light-header-padding, 4);
+
+// Primary (corporate)
+$accordion-corporate-color: $cello;
+$accordion-corporate-background: $white;
+$accordion-corporate-border: $gray-light;
+$accordion-corporate-content-color: $text-color;
+$accordion-corporate-arrow-color: $white;
+$accordion-corporate-arrow-background: $brand-primary;
+$accordion-corporate-shadow: $shadow-area-sm;
+$accordion-corporate-border-radius: 6px;
+$accordion-corporate-header-padding: 24px 82px 22px 32px;
+$accordion-corporate-content-padding: 25px 44px 25px nth($accordion-corporate-header-padding, 4);
+
+// Panel groups
+.panel-group.panel-group-custom {
+  margin-bottom: 0;
+
+  .panel-heading + .panel-collapse > .panel-body,
+  .panel-heading + .panel-collapse > .list-group {
+    border-top: 0;
+  }
+
+  .panel + .panel {
+    margin-top: 0;
+  }
+}
+
+.panel-group.panel-group-corporate {
+  .panel + .panel {
+    margin-top: 30px;
+  }
+}
+
+.panel-custom {
+  margin: 0;
+  background: inherit;
+  border: 0;
+  border-radius: 0;
+  @include box-shadow(none);
+
+  a {
+    display: block;
+  }
+
+  // Panel heading
+  .panel-heading {
+    padding: 0;
+    border-bottom: 0;
+    @include border-top-radius(0);
+  }
+
+  // Panel contents
+  .panel-body {
+    padding: 0;
+    border: 0;
+  }
+}
+
+* + .panel-group-custom {
+  margin-top: 35px;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 50px;
+  }
+}
+
+// Panel light
+.panel-light {
+  &:first-child {
+    .panel-title {
+      border-top: 1px solid $accordion-light-border;
+    }
+  }
+
+  .panel-title {
+    border-bottom: 1px solid $accordion-light-border;
+
+    &:nth-child(n + 2) {
+      margin-top: -1px;
+    }
+  }
+
+  .panel-title a {
+    position: relative;
+    padding: $accordion-light-header-padding;
+    font: 700 16px/24px $font-family-sec;
+    color: $accordion-light-color;
+    transition: 1.5s all ease;
+
+    // Opened state
+    .panel-arrow:after {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    // Closed state
+    &.collapsed {
+      .panel-arrow:after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .panel-arrow {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+    right: 26px;
+    transition: .33s;
+    will-change: transform;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      @include transform(translateY(-50%));
+      background: $accordion-light-arrow-color;
+    }
+
+    &:before {
+      width: 14px;
+      height: 2px;
+      right: 0;
+    }
+
+    &:after {
+      width: 2px;
+      height: 14px;
+      right: 6px;
+      transition: .2s all ease;
+    }
+  }
+
+  .panel-collapse {
+    position: relative;
+    margin-top: -1px;
+    border-bottom: 1px solid $accordion-light-border;
+    color: $accordion-light-content-color;
+    will-change: transform;
+  }
+
+  .panel-body {
+    color: rgba($gray-base, .5);
+    padding: $accordion-light-content-padding;
+  }
+
+  // Media queries
+  @media (max-width: $screen-xs-max) {
+    .panel-title a,
+    .panel-body {
+      padding-left: 15px;
+    }
+  }
+}
+
+// Panel corporate
+.panel-corporate {
+  .panel-title a,
+  .panel-collapse {
+    background: $accordion-corporate-background;
+    @include box-shadow($accordion-corporate-shadow);
+  }
+
+  .panel-title a {
+    position: relative;
+    z-index: 1;
+    padding: $accordion-corporate-header-padding;
+    font: 700 16px/24px $font-family-sec;
+    color: $accordion-corporate-color;
+    transition: 1.3s all ease;
+    border-radius: $accordion-corporate-border-radius $accordion-corporate-border-radius 0 0;
+
+    // Open state
+    .panel-arrow {
+      &:after {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    // Collapsed state
+    &.collapsed {
+      border-radius: $accordion-corporate-border-radius;
+
+      .panel-arrow {
+        border-radius: 0 $accordion-corporate-border-radius $accordion-corporate-border-radius 0;
+        &:after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  // Panel arrow
+  .panel-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    width: 70px;
+    background: $accordion-corporate-arrow-background;
+    border-radius: 0 $accordion-corporate-border-radius 0 0;
+    transition: 1.3s all ease;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      z-index: 4;
+      @include transform(translateY(-50%));
+      background: $accordion-corporate-arrow-color;
+    }
+
+    &:before {
+      width: 14px;
+      height: 2px;
+      right: 28px;
+    }
+
+    &:after {
+      width: 2px;
+      height: 14px;
+      right: 34px;
+    }
+  }
+
+  .panel-collapse {
+    position: relative;
+    z-index: 2;
+    color: $accordion-corporate-content-color;
+    border-radius: 0 0 $accordion-corporate-border-radius $accordion-corporate-border-radius;
+  }
+
+  .panel-body {
+    color: rgba($gray-base, .5);
+    padding: $accordion-corporate-content-padding;
+  }
+
+  // Media queries
+  @media (max-width: $screen-xs-max) {
+    .panel-title a,
+    .panel-body {
+      padding-left: 25px;
+    }
+  }
+}
+

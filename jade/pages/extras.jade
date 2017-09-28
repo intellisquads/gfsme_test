@@ -1,0 +1,37 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-twitter-widget
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Extras'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+
+  +page-title(pageName, 'bg-image-8')
+
+  //- RD Twitter Feed
+  section.section-50.section-sm-75.section-lg-100.bg-whisper
+    .shell
+      .range
+        .cell-xs-12
+          h4.text-spacing--25 RD Twitter Feed
+    .shell.twitter(data-twitter-username='templatemonster', data-twitter-date-format="%d %b %Y", data-twitter-date-hours=" hours ago", data-twitter-date-minutes=" minutes ago")
+      .range.range-sm-center.range-md-left
+        .cell-sm-6.cell-md-6
+          +twitter-widget
+          +twitter-widget
+
+        .cell-sm-6.cell-md-6
+          +twitter-widget
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_section-footer-default

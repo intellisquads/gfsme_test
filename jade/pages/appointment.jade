@@ -1,0 +1,56 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Appointment'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+
+  +page-title(pageName, 'bg-image-4')
+
+  //- Make an Appointment
+  section.section-60.section-sm-top-90.section-sm-bottom-100
+    .shell
+      .range
+        .cell-md-9.cell-lg-7
+          h3.text-spacing--25 Make an Appointment
+          //- RD Mailform
+          form.rd-mailform.form-modern.offset-top-30(data-form-output="form-output-global", data-form-type='order', method='post', action='bat/rd-mailform.php')
+            .range.range-7
+              .cell-sm-3
+                .form-group
+                  input#appointment-name.form-control(type="text" name="name" data-constraints="@Required")
+                  label.form-label(for="appointment-name") Name
+              .cell-sm-4.offset-top-30.offset-sm-top-0
+                .form-group
+                  input#appointment-email.form-control(type="email" name="email" data-constraints="@Email @Required")
+                  label.form-label(for="appointment-email") Email
+              .cell-sm-3.offset-top-30
+                .form-group
+                  input#appointment-date.form-control(type="text" name="date" data-constraints="@Required", data-time-picker='date')
+                  label.form-label(for="appointment-date") Date
+              .cell-sm-4.offset-top-30
+                .form-group
+                  input#appointment-time.form-control(type="text" name="time" data-constraints="@Required", data-time-picker='time')
+                  label.form-label(for="appointment-time") Time Interval
+              .cell-xs-7.offset-top-30
+                .form-group
+                  .textarea-lined-wrap
+                    textarea#appointment-message.form-control(name="message" data-constraints="@Required")
+                    label.form-label(for="appointment-message") Message
+
+              .cell-xs-5.offset-top-30.offset-xs-top-30.offset-sm-top-50
+                button(type="submit").btn.btn-primary.btn-block Send
+
+              .cell-xs-2.offset-top-22.offset-xs-top-30.offset-sm-top-50
+                button(type="reset").btn.btn-silver-outline.btn-block Reset
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_section-footer-default

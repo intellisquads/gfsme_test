@@ -1,0 +1,156 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-icon-box
+include ../elements/_ui-icon-box-vertical
+include ../elements/_ui-icon-box-horizontal
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Icon lists'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+
+  +page-title(pageName, 'bg-image-5')
+
+  //- Lists
+  section.section-40.section-sm-top-75.section-sm-bottom-50.section-lg-top-90
+    .shell
+      .range
+        .cell-xs-12
+          h3.text-spacing--30 Lists
+      .range.offset-top-40
+        .cell-xs-6.cell-sm-4.cell-lg-3
+          h5 Unordered List
+          ul.list-marked
+            li Responsive & Retina
+            li Extensive docs
+            li Powerful Navigation
+            li Video Backgrounds
+            li Social Plugins
+
+        .cell-xs-6.cell-sm-4.cell-lg-3.offset-top-40.offset-xs-top-0
+          h5.text-spacing--30 Ordered List
+          ul.list-ordered
+            li Responsive & Retina
+            li Extensive docs
+            li Powerful Navigation
+            li Video Backgrounds
+            li Social Plugins
+  ='\n'
+
+  //- Icon Left List
+  section.section-40
+    .shell
+      .range
+        .cell-xs-12
+          h3.text-spacing--30 Icon Left List
+      .range.offset-top-40
+        .cell-md-9.cell-lg-12
+          .range
+            .cell-sm-6.cell-lg-3
+              +icon-box-left({
+                icon: ['icon-lg-variant-1', 'material-icons-phonelink'],
+                header: 'Edge Technologies',
+                text: 'Our team of professional analysts is constantly roaming the web in search of promising techniques.'
+              })
+
+            .cell-sm-6.cell-lg-3.offset-top-40.offset-sm-top-0
+              +icon-box-left({
+                icon: ['icon-lg', 'material-icons-av_timer'],
+                header: 'We Value Your Time',
+                text: 'We know how important it is for you to maintain your schedule, that’s why we do everything to fit it. '
+              })
+
+            .cell-sm-6.cell-lg-3.offset-top-40.offset-lg-top-0
+              +icon-box-left({
+                icon: ['icon-lg-variant-1', 'material-icons-headset_mic'],
+                header: 'Qualified Support',
+                text: 'Our support team is online 24/7, and is ready to help you with any design-related issue.'
+              })
+
+            .cell-sm-6.cell-lg-3.offset-top-40.offset-lg-top-0
+              +icon-box-left({
+                icon: ['icon-lg', 'material-icons-av_timer'],
+                header: 'Made for Speed',
+                text: 'We know how embarassing and time-consuming content loading can be.'
+              })
+  ='\n'
+
+  //- Icon Top List
+  section.section-50
+    .shell
+      .range
+        .cell-xs-12
+          h3.text-spacing--30 Icon Top List
+      .range.offset-top-30
+        .cell-md-9.cell-lg-12
+          .range
+            .cell-xs-6.cell-lg-3
+              +icon-box-vertical({
+                icon: ['icon-md', 'material-icons-phonelink'],
+                header: 'Responsive & Retina',
+                text: 'AllRisk looks simply great on any screen resolution. All images are responsive and ultra sharp.'
+              })
+
+            .cell-xs-6.cell-lg-3.offset-top-50.offset-xs-top-0
+              +icon-box-vertical({
+                icon: ['icon-md', 'material-icons-library_books'],
+                header: 'Extensive docs',
+                text: 'AllRisk has online and easily accesible documentation. Our documentation contains detailed instructions for further template customization and self adaptation.'
+              })
+
+            .cell-xs-6.cell-lg-3.offset-top-50.offset-lg-top-0
+              +icon-box-vertical({
+                icon: ['icon-md', 'material-icons-videocam'],
+                header: 'Video Backgrounds',
+                text: 'Our templates are enabled with captivating video background, an option which can transform any website into esthetically appealing one.'
+              })
+
+            .cell-xs-6.cell-lg-3.offset-top-50.offset-lg-top-0
+              +icon-box-vertical({
+                icon: ['icon-md', 'material-icons-open_with'],
+                header: 'Powerful Navigation',
+                text: 'Powerful and really flexible RD Navbar plugin is included too. Create any type of navigation with our ready-to-go examples and adapt them to your needs.'
+              })
+  ='\n'
+
+  //- Icon Box
+  section.section-top-35.section-bottom-60.section-sm-bottom-100
+    .shell
+      .range
+        .cell-xs-12
+          h3.text-spacing--30 Icon Box
+
+      .range.offset-top-40.offset-lg-top-50
+        .cell-sm-6.cell-md-4.height-fill
+          +icon-box({
+            icon: ['icon-lg-variant-2', 'material-icons-device_hub'],
+            header: 'Social Integration',
+            text: 'AllRisk has full set of social icons and styling options which allow you to share any content.'
+          })
+
+        .cell-sm-6.cell-md-4.height-fill.offset-top-40.offset-sm-top-0
+          +icon-box({
+            icon: ['icon-md', 'material-icons-filter'],
+            header: 'Parallax Effects',
+            text: 'Everyone loves parallax scrolling effects, they are simply beautiful. AllRisk has advanced parallax options '
+          })
+
+        .cell-sm-6.cell-md-4.height-fill.offset-top-40.offset-md-top-0
+          +icon-box({
+            icon: ['icon-md', 'material-icons-build'],
+            header: 'Extended Toolkit',
+            text: 'AllRisk provides a poweful and flexible exntended toolkit in addition to basic Bootsrap. '
+          })
+  ='\n'
+
+
+  //- Page Footer
+  include ../sections/_section-footer-default

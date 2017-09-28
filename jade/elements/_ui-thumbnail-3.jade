@@ -1,0 +1,14 @@
+//- Thumbnail 3
+//- Original image naming format: pagename-{X}-1200x600_original.jpg
+mixin thumbnail-3(obj)
+  - var originalSize = obj.original.split('_')[0].split('-').pop();
+  //- Thumbnail variant 3
+  .thumbnail.thumbnail-variant-3(class=obj.mod)
+    a.link.link-external(href='gallery-item.html')
+      span.icon.icon-sm.fa.fa-link
+    figure
+      +jpg(obj.img)
+    .caption
+      a.link.link-original(href='images/' + obj.original + '.jpg', data-photo-swipe-item='', data-size=originalSize)
+
+

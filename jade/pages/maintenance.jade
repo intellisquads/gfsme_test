@@ -1,0 +1,40 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Maintenance'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+
+  +page-title(pageName, 'bg-image-14')
+
+  //- We are currently working on.
+  section.section-60.section-sm-top-90.section-sm-bottom-100
+    .shell.text-center
+      .range.range-sm-center
+        .cell-xs-12
+          h3.text-spacing--25 We are currently working on.
+          p.h5.text-silver.text-spacing--25.text-bold This page will appear in
+          .block-centered.offset-top-30.offset-sm-top-60
+            //- Countdown
+            .countdown.countdown-default(data-type='until', data-time='31 Dec 2017 16:00', data-format='dhms')
+
+          .offset-top-60.offset-lg-top-90
+            h5.text-spacing--25 Stay tuned and subscribe to our newsletter
+            //- RD Mailform
+            .block-centered.offset-top-22.offset-sm-top-40(style='max-width: 370px;')
+              form.rd-mailform.form-modern(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+                .form-group
+                  label.form-label(for="contact-email") Email
+                  input#contact-email.form-control(type="email" name="email" data-constraints="@Email @Required")
+                button(type="submit").btn.btn-primary.btn-block.offset-top-30 Subscribe
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_section-footer-default

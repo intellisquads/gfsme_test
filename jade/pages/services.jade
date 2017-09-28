@@ -1,0 +1,135 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-icon-box-vertical
+include ../elements/_ui-link-image
+
+block variables
+  - var activeIndex = 2
+  - var pageName = 'Services'
+
+block title
+  title=pageName
+
+block page
+  //- Page Header
+  include ../sections/_section-header-default
+
+
+
+  +page-title(pageName, 'bg-image-7')
+
+  //- What We Do
+  .divider-primary
+  section.section-66.section-sm-90.bg-gray-base.bg-image.bg-image-white(style='background-image: url(images/bg-image-12.jpg);')
+    .shell
+      .range
+        .cell-xs-12.text-center
+          h3 Our Services
+          p.block-centered.text-white(style='max-width: 540px;').
+            Every policy is designed to offer you affordable coverage and flexible payment options, and you can file claims anytime with 24/7 customer service.
+
+      .range.offset-top-40.offset-md-top-50
+        .cell-xs-6.cell-md-4
+          +icon-box-vertical({
+            mod: 'icon-box-vertical-sm',
+            icon: ['icon-md', 'material-design-clipboard99'],
+            header: 'Condo Insurance',
+            text: 'Get dependable condo insurance to protect your personal belongings..'
+          })
+
+        .cell-xs-6.cell-md-4.offset-top-50.offset-xs-top-0
+          +icon-box-vertical({
+            mod: 'icon-box-vertical-sm',
+            icon: ['icon-md', 'material-design-city24'],
+            header: 'Flood Insurance',
+            text: 'Safeguard your home and the stuff inside and don’t worry about damages.'
+          })
+
+        .cell-xs-6.cell-md-4.offset-top-50.offset-md-top-0
+          +icon-box-vertical({
+            mod: 'icon-box-vertical-sm',
+            icon: ['icon-md', 'material-design-bookmark48'],
+            header: 'Law Insurance ',
+            text: 'Insurance policies sold to corporate policyholders protect against a wide variety of risks.'
+          })
+
+        .cell-xs-6.cell-md-4.offset-top-50.offset-lg-top-60.offset-xl-top-90
+          +icon-box-vertical({
+            mod: 'icon-box-vertical-sm',
+            icon: ['icon-md', 'material-design-man460'],
+            header: 'Golf Cart Insurance',
+            text: 'You can get reliable coverage from us to protect your golf cart.'
+          })
+
+        .cell-xs-6.cell-md-4.offset-top-50.offset-lg-top-60.offset-xl-top-90
+          +icon-box-vertical({
+            mod: 'icon-box-vertical-sm',
+            icon: ['icon-md', 'material-design-earth205'],
+            header: 'Umbrella Insurance',
+            text: 'Get the extra layer of coverage you need with umbrella insurance..'
+          })
+
+        .cell-xs-6.cell-md-4.offset-top-50.offset-lg-top-60.offset-xl-top-90
+          +icon-box-vertical({
+            mod: 'icon-box-vertical-sm',
+            icon: ['icon-md', 'material-design-briefcase50'],
+            header: 'Travel Insurance',
+            text: 'Travel insurance provides cover if you require medical attention, lose any belongings or other complications.'
+          })
+  .divider-primary
+  ='\n'
+
+  //- Pricing tables
+  section.bg-decoration-wrap.bg-decoration-bottom.bg-decoration-bottom-mod.section-60.section-sm-100.bg-white(style='background: #fafbfe')
+    .shell.bg-decoration-content
+      .range.range-sm-center
+        .cell-md-10.cell-lg-12
+          h3.text-spacing--25 Choose Your Plan
+        .cell-md-10.cell-lg-12.offset-top-40
+          include ../_includes/_pricing-tables-range
+    .bg-decoration-object.bg-iron.bg-iron-custom
+  ='\n'
+
+  include ../sections/_section-default-cta
+
+  include ../sections/_section-why-choose-us
+
+  //- Our Clients
+  section.section-60.section-sm-90.section-lg-bottom-120.bg-mine-shaft.bg-mine-shaft-varinat-1
+    .shell
+      .range
+        .cell-xs-12
+          h3.text-spacing--25 Our Clients
+      .range.offset-top-15
+        .cell-sm-7.cell-md-5.cell-lg-4
+          //- Owl Carousel
+          .owl-carousel-inverse
+            .owl-carousel.owl-nav-bottom-left(data-items='1', data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag="false", data-nav='true')
+              .item
+                p We’ve built our reputation on partnering with agents all around the world to provide comprehensive insurance for their clients.
+              .item
+                p Got really enjoyable experience with your product. Easy set up is a huge plus. I even didn’t turn to support service.
+              .item
+                p I’m extremely satisfied with their work. My new website looks great and runs smoothly. The support is excellent too.
+
+        .cell-md-7.cell-lg-8.offset-top-40.offset-md-top-0
+          .range.shift-md-top-1
+            .cell-xs-6.cell-sm-3
+              +link-image({img: 'services-2-166x76'})
+
+            .cell-xs-6.cell-sm-3.offset-top-30.offset-xs-top-0
+              +link-image({img: 'services-3-152x67'})
+
+            .cell-xs-6.cell-sm-3.offset-top-30.offset-sm-top-0
+              +link-image({img: 'services-3-131x68'})
+
+            .cell-xs-6.cell-sm-3.offset-top-30.offset-sm-top-0
+              +link-image({img: 'services-4-145x58'})
+  ='\n'
+
+
+
+
+  //- Page Footer
+  include ../sections/_section-footer-default

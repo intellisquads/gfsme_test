@@ -1,0 +1,53 @@
+extends  ../_skeleton
+
+block variables
+  - var pageName = 'Create your account'
+  - var bodyClass = ['one-screen-page', 'bg-gray-darker', 'bg-image'];
+  - var bodyImage = 'bg-register'
+
+block title
+  title=pageName
+
+block page
+  .page-inner
+    //- Page Header
+    include ../sections/_section-header-base-transparent
+
+
+    section
+      .shell
+        .range.range-sm-center
+          .cell-sm-7.cell-md-5.cell-lg-4
+            //- Block shadow
+            .block-shadow.text-center
+              .block-inner
+                p.h7.text-bold.text-abbey Create your account
+                .offset-top-40.offset-sm-top-60
+                  span.icon.icon-xl.icon-gray-base.material-icons-face
+              //- RD Mailform
+              form.rd-mailform.form-modern.form-darker.offset-top-40
+                .block-inner
+                  .form-group
+                    input#register-form-name.form-control(type="text" name="name" data-constraints="@Required")
+                    label.form-label(for="register-form-name") Username
+                  .form-group.offset-top-22
+                    input#feedback-email.form-control(type="email" name="email" data-constraints="@Email @Required")
+                    label.form-label(for="feedback-email") Email
+                  .form-group.offset-top-22
+                    input#register-form-password.form-control(type="password" name="pass" data-constraints="@Required")
+                    label.form-label(for="register-form-password") Password
+                  .form-group.offset-top-22
+                    input#register-form-password-confirm.form-control(type="password" name="pass-confirm" data-constraints="@Required")
+                    label.form-label(for="register-form-password-confirm") Repeat a password
+                  .offset-top-22.text-left.text-secondary
+                    label.checkbox-inline.checkbox-small
+                      input(name='input-checkbox', value='checkbox-1', type='checkbox')
+                      | I agree with the&nbsp;
+                      a.link-primary-inline(href='privacy.html') Terms of use
+                      | .
+                .offset-top-30.offset-sm-top-40
+                  button(type="submit").btn.btn-primary.btn-block Sign up
+
+
+    //- Page Footer
+    include ../sections/_section-footer-base-transparent

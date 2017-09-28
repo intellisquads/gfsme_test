@@ -1,0 +1,524 @@
+//
+// Custom typography
+// --------------------------------------------------
+
+// Page header
+// -------------------------
+
+.page-header {
+}
+
+// Fonts
+// -------------------------
+
+.font-default {
+  font-family: $font-family-base;
+}
+
+@mixin font-size-default {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+.font-size-default {
+  @include font-size-default;
+}
+
+// Basic Typography
+// -------------------------
+
+#{headings()} {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  color: $headings-color;
+
+  > span {
+    display: inline-block;
+    font-size: inherit;
+  }
+
+  a {
+    display: inline;
+    font: inherit;
+    letter-spacing: inherit;
+    transition: .33s all ease;
+    &, &:active, &:focus {
+      color: inherit;
+    }
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+
+  > * {
+    margin-right: .25em;
+  }
+}
+
+h1,
+.h1 {
+  //{0 - 768px} <= 40px
+  //{768px - 992px} <= 62px
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 40px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: 70px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    line-height: $font-lh-h1;
+    font-size: $font-size-h1;
+  }
+}
+
+h2,
+.h2 {
+  //{0 - 768px} <= 36px
+  //{768px - 992px} <= 52px
+  font-size: 32px;
+  line-height: 1.4;
+  letter-spacing: -.025em;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 32px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: 40px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    line-height: $font-lh-h2;
+    font-size: $font-size-h2;
+  }
+  .sub-head,
+  .sub-head-small {
+    letter-spacing: 0;
+    margin-right: 0;
+  }
+  .sub-head {
+    font-size: 0.8474576271186441em;
+  }
+  .sub-head-small {
+    font-size: 0.6779em; //40px
+  }
+}
+
+
+h3.text-style-lighter,
+.h3.text-style-lighter {
+  font-weight: 400;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 50px;
+  }
+}
+
+h3,
+.h3 {
+  //{0 - 768px} <= 32px
+  //{768px - 992px} <= 44px
+  font-size: 24px;
+  line-height: 1.35;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 26px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: 30px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    line-height: $font-lh-h3;
+    font-size: $font-size-h3;
+  }
+}
+
+h4,
+.h4 {
+  //{0 - 768px} <= 26px
+  //{768px - 992px} <= 36px
+  font-size: 20px;
+  line-height: 1.35;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 24px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: 26px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    line-height: $font-lh-h4;
+    font-size: $font-size-h4;
+  }
+}
+
+h5,
+.h5 {
+  //{0 - 768px} <= 22px
+  //{768px - 992px} <= 28px
+  font-size: 16px;
+  line-height: 1.35;
+
+  @media (min-width: $screen-lg-min) {
+    line-height: $font-lh-h5;
+    font-size: $font-size-h5;
+  }
+}
+
+h6,
+.h6 {
+  //{0 - 768px} <= 18px
+  //{768px - 992px} <= 22px
+  font-size: 15px;
+  line-height: 1.2;
+
+  @media (min-width: $screen-xs-min) {
+    line-height: $font-lh-h6;
+    font-size: $font-size-h6;
+  }
+}
+
+h6.h6 {
+  font-family: $font-family-base;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.h7 {
+  font: 700 14px/24px;
+  text-transform: uppercase;
+  color: $gray;
+}
+
+%text-bigger {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: (36 / 25);
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 20px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: 25px;
+  }
+}
+
+.text-bigger {
+  @extend %text-bigger;
+}
+
+.text-big {
+  font-size: 1.571428571428571em;
+}
+
+.text-large {
+  font: 700 38px/42px $font-family-sec;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 48px;
+  }
+}
+
+.text-extra-large-bordered {
+  display: inline-block;
+  padding: .07em .11em;
+  font: 700 120px $font-family-sec;
+  letter-spacing: -.05em;
+  line-height: .8;
+  border: .075em solid;
+  text-align: center;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 220px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 272px;
+  }
+}
+
+.big {
+  letter-spacing: .025em;
+}
+
+@media (min-width: $screen-xs-min) {
+  .big {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .big {
+    font-size: $font-size-large;
+    line-height: floor(($font-size-large * $line-height-large));
+  }
+}
+
+small,
+.small {
+  font-size: $font-size-small;
+  line-height: floor(($font-size-small * $line-height-small));
+}
+
+code {
+  padding: 5px 7px;
+  font-size: 75%;
+  color: $brand-danger;
+  background-color: $gray-lighter;
+  border-radius: 2px;
+}
+
+em {
+  font-family: $font-family-serif;
+  font-size: inherit;
+  font-style: italic;
+  font-weight: 700;
+  line-height: inherit;
+  color: $gunsmoke;
+}
+
+mark,
+.mark {
+  color: $white;
+  background-color: $brand-primary;
+  padding: .2em .3em;
+}
+
+.text-style-1 {
+  font-family: $font-family-sec;
+  color: $dusty-gray;
+}
+
+.text-style-2 {
+  font-family: $font-family-serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.text-style-3 {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba($gray-base, .5);
+  font-family: $font-family-sec;
+}
+
+// Misc
+// -------------------------
+
+// Addresses
+address {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Backgrounds
+// -------------------------
+
+// Contextual backgrounds
+//
+%context-dark {
+  color: rgba($white, .5);
+
+  #{headings()} {
+    color: $white;
+  }
+
+  a {
+    &, &:active, &:focus {
+      color: $white;
+    }
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+
+  .big,
+  .text-bigger,
+  .text-extra-large-bordered {
+    color: $white;
+  }
+}
+
+.context-dark {
+  @extend %context-dark;
+}
+
+// Colors
+.bg-gray-base {
+  @extend %context-dark;
+  @include bg-variant-custom(#{$gray-base});
+}
+
+.bg-gray-darker {
+  @extend %context-dark;
+  @include bg-variant-custom(#{$gray-darker});
+}
+
+.bg-gray-dark {
+  @extend %context-dark;
+  @include bg-variant-custom(#{$gray-dark});
+}
+
+.bg-mine-shaft {
+  @extend %context-dark;
+  @include bg-variant-custom(#{$mine-shaft});
+  &-varinat-1 {
+    background-color: #f2f3f8;
+    color: $cello;
+    #{headings()} {
+      color: $cello;
+    }
+  }
+  .owl-carousel-inverse .owl-next, .owl-carousel-inverse .owl-prev {
+    color: $cello;
+  }
+  &-variant-2 {
+    background-color: #f2f3f8;
+  }
+}
+
+.bg-whisper-1 {
+  @include bg-variant-custom(#{$whisper-1});
+}
+
+.bg-cod-gray {
+  @extend %context-dark;
+  @include bg-variant-custom(#{$cod-gray});
+}
+
+.bg-gray {
+  @include bg-variant-custom(#{$gray});
+}
+
+.bg-cello {
+  @extend %context-dark;
+  @include bg-variant-custom(#{$cello});
+}
+
+.bg-primary {
+  @extend %context-dark;
+  @include bg-variant-custom(#{$brand-primary});
+}
+
+.bg-gray-light {
+  @include bg-variant-custom(#{$gray-light});
+  &-variant-1 {
+    background-color: #f2f3f8;
+  }
+}
+
+.bg-gray-lighter {
+  @include bg-variant-custom(#{$gray-lighter});
+}
+
+.bg-whisper {
+  @include bg-variant-custom(#{$whisper});
+}
+
+.bg-white {
+  @include bg-variant-custom(#{$white});
+}
+
+.bg-athens-gray {
+  @include bg-variant-custom(#{$athens-gray});
+}
+
+.bg-iron {
+  @include bg-variant-custom(#{$iron});
+  &.bg-iron-custom {
+    background-color: #f2f3f8;
+  }
+}
+
+// Bg image
+.bg-image {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.bg-image-centered {
+  -webkit-background-size: auto;
+  background-size: auto;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.bg-image-1 {
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+
+  @media (max-width: $screen-xs-max) {
+    background-image: none !important;
+  }
+}
+
+.page {
+  .bg-image-white {
+    .text-gray-base-05 {
+      color: rgba($white, .5);
+    }
+  }
+}
+
+// Colors
+// -------------------------
+
+// Contextual colors
+//
+
+.page {
+  @include text-emphasis-variant('.text-primary', $brand-primary);
+  @include text-emphasis-variant('.text-abbey', $abbey);
+  @include text-emphasis-variant('.text-secondary', $secondary);
+  @include text-emphasis-variant('.text-red-orange', $red-orange);
+  @include text-emphasis-variant('.text-gray-base', $gray-base);
+  @include text-emphasis-variant('.text-gray-base-05', rgba($gray-base, .5));
+  @include text-emphasis-variant('.text-kashmir-blue', $kashmir-blue);
+  @include text-emphasis-variant('.text-silver', $silver);
+  @include text-emphasis-variant('.text-dark', $gray-dark);
+  @include text-emphasis-variant('.text-gray', $gray);
+  @include text-emphasis-variant('.text-cello', $cello);
+  @include text-emphasis-variant('.text-gray-light', $gray-light);
+  @include text-emphasis-variant('.text-dusty-gray', $dusty-gray);
+  @include text-emphasis-variant('.text-white', $white);
+  @include text-emphasis-variant('.text-white-05', rgba($white, .5));
+  @include text-emphasis-variant('.text-white-03', rgba($white, .3));
+}
+
+
+.bg-image-sm-hide {
+  @media (max-width: $screen-sm-min - 1) {
+    background-image: none !important;
+  }
+}
+
+.bg-image.bg-gray-dark {
+  .quote-vertical.quote-vertical-inverse .quote-open > svg {
+    fill: $white !important;
+  }
+}

@@ -1,0 +1,330 @@
+//
+// Wrappers
+// --------------------------------------------------
+.object-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+// Positioning
+.object-wrap-right {
+  > .object-wrap-body {
+    right: 0;
+  }
+}
+
+.object-wrap-left {
+  > .object-wrap-body {
+    left: 0;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .object-wrap-sm-right {
+    > .object-wrap-body {
+      right: 0;
+    }
+  }
+
+  .object-wrap-sm-left {
+    > .object-wrap-body {
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .object-wrap-body {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    width: 100%;
+
+    > img {
+      position: absolute;
+      min-width: 100%;
+      max-width: none;
+      height: auto;
+      max-height: none;
+      top: 20%;
+      left: 50%;
+      @include transform(translate(-50%, -20%));
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .object-wrap-body {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    min-width: 1px;
+    max-width: none;
+    height: 100%;
+    min-height: 100%;
+    max-height: none;
+    margin: 0;
+    background: inherit;
+    z-index: 0;
+
+    > img {
+      position: relative;
+      height: auto;
+      min-height: 100.5%;
+      width: auto;
+      min-width: 102%;
+      max-width: none;
+      left: 50%;
+      @include transform(translateX(-50%));
+    }
+
+    & + * {
+      margin-top: 0;
+    }
+  }
+}
+
+// sizes
+@media (min-width: $screen-sm-min) {
+  .sm-width-c6 {
+    @include make-grid-parameter(width, 0, $shell-sm-width, 6);
+  }
+}
+
+.md-width-c7d20 {
+  @media (min-width: $screen-md-min) {
+    @include make-grid-parameter(width, 20px, $shell-md-width, 7);
+  }
+
+  @media (min-width: $screen-lg-min) {
+    @include make-grid-parameter(width, 20px, $shell-lg-width, 7);
+  }
+}
+
+.md-width-c5dm20 {
+  @media (min-width: $screen-md-min) {
+    @include make-grid-parameter(width, -20px, $shell-md-width, 5);
+  }
+
+  @media (min-width: $screen-lg-min) {
+    @include make-grid-parameter(width, -20px, $shell-lg-width, 5);
+  }
+}
+
+// bg-wrap
+.bg-wrap {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120vw;
+    left: 50%;
+    @include transform(translateX(-50%));
+    background: inherit;
+    z-index: -1;
+  }
+}
+
+.bg-wrap-sm-left {
+  z-index: 1;
+  @media (min-width: $screen-md-min) {
+    &:before {
+      width: 100vw;
+      right: 0;
+      @include transform(none);
+    }
+  }
+}
+
+.bg-wrap-sm-right {
+  z-index: 1;
+  @media (min-width: $screen-md-min) {
+    &:before {
+      width: 100vw;
+      left: 0;
+      @include transform(none);
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  .wrap-justify {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include align-items(center);
+    @include justify-content(space-around);
+
+    > * + * {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .wrap-justify {
+    @include justify-content(space-between);
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .wrap-justify {
+    padding-right: 30px;
+  }
+}
+
+// Link wrap
+.link-wrap {
+  line-height: 1;
+  a {
+    display: inline;
+    line-height: 1;
+  }
+}
+
+// Bg decoration
+[class*='bg-decoration-wrap'] {
+  position: relative;
+  overflow: hidden;
+
+  .bg-decoration-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .bg-decoration-object {
+    top: 0;
+    bottom: auto;
+  }
+}
+
+.bg-decoration-bottom {
+  .bg-decoration-object {
+    top: auto;
+    bottom: 0;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .bg-decoration-wrap-sm {
+    .bg-decoration-object {
+      height: 50%;
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
+  }
+
+  .bg-decoration-bottom-sm {
+    .bg-decoration-object {
+      height: 34%;
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .bg-decoration-object {
+    height: 50%;
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
+
+  .bg-decoration-bottom-mod {
+    .bg-decoration-object {
+      height: 45%;
+    }
+  }
+}
+
+.image-group {
+  @include display-flex;
+  @include flex-direction(row);
+  @include flex-wrap(nowrap);
+  @include align-items(flex-end);
+
+  img {
+    position: relative;
+    height: auto !important;
+    max-width: none;
+    width: 100% !important;
+  }
+
+  figure {
+    position: relative;
+    &:nth-child(1) {
+      z-index: 3;
+      max-width: 194px;
+      min-width: 29%;
+
+      img {
+        @include transform(translateY(-1.7%));
+        left: -3px;
+      }
+    }
+
+    &:nth-child(2) {
+      z-index: 2;
+      max-width: 404px;
+      min-width: 60%;
+      margin-left: -29.5%;
+
+      img {
+        @include transform(translateY(8%));
+      }
+    }
+
+    &:nth-child(3) {
+      z-index: 1;
+      max-width: 546px;
+      min-width: 82%;
+      margin-left: -42.5%;
+
+      img {
+        @include transform(translateY(-1.9%));
+      }
+    }
+  }
+}
+
+.image-group-extended {
+  @include display-flex;
+  @include flex-direction(row);
+  @include flex-wrap(nowrap);
+  @include align-items(flex-end);
+}
+
+.image-wrap-1 {
+  @media (min-width: $screen-sm-min) {
+    padding-right: 15px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    padding-right: 0;
+    margin-right: -10px;
+  }
+
+  img {
+    max-width: 107%;
+  }
+}
+
+.image-wrap-2 {
+  @media (min-width: $screen-md-min) {
+    position: relative;
+    right: -14px;
+    top: 12px;
+  }
+}
+
+.image-wrap-3 {
+  position: relative;
+  @include transform(translate3d(0,0,0) scale(1.02));
+  margin-top: -5px;
+  margin-left: -53px;
+}
